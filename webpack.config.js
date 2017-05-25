@@ -1,13 +1,13 @@
 const { resolve } = require('path');
 const webpack = require('webpack');
-const pkg = require('./package.json');
+const HtmlPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
   entry: {
     widgetA: 'widgetA',
     widgetB: 'widgetB',
-    vendors: ['react', 'react-dom']
+    vendor: ['react', 'react-dom']
   },
 
   output: {
@@ -19,25 +19,17 @@ module.exports = {
 
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'commons',
-      // (the commons chunk name)
-
-      //filename: 'commons.js',
-      // (the filename of the commons chunk)
-
-      minChunks: 2,
-      // (Modules must be shared between 3 entries)
-
-      chunks: ['widgetA', 'widgetB'],
-      // (Only use these entries)
+      name: 'common',
+      chunks: ['widgetA', 'widgetB']
     }),
 
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendors',
+      name: 'vendor',
       minChunks: Infinity
     }),
 
+    new HtmlPlugin(),
+
     new BundleAnalyzerPlugin()
   ]
-
 };
