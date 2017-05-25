@@ -3407,24 +3407,20 @@ widest-line@^1.0.0:
   dependencies:
     string-width "^1.0.1"
 
-widgetA@aviraminy/widgetA:
-  version "1.2.0"
-  resolved "https://codeload.github.com/aviraminy/widgetA/tar.gz/ac3f2a7084d909b2f415d083d5ab48b4a5f3b1ee"
+widgetA@aviraminy/widgetA#packed:
+  version "1.3.0"
+  resolved "https://codeload.github.com/aviraminy/widgetA/tar.gz/91739efd3f191814e81a4920ab07d61a60022e1c"
   dependencies:
     lodash "^4.17.4"
     mobx "^3.1.10"
     moment "^2.18.1"
-    react "^15.5.4"
-    react-dom "^15.5.4"
 
 widgetB@aviraminy/widgetB:
-  version "1.1.0"
-  resolved "https://codeload.github.com/aviraminy/widgetB/tar.gz/34eba13c77ec115609936f982c7d61c33ab8473c"
+  version "1.2.0"
+  resolved "https://codeload.github.com/aviraminy/widgetB/tar.gz/d2e6053412f522409c905013fa48080ad87b2960"
   dependencies:
     lodash "^4.17.4"
     mobx "^3.1.10"
-    react "^15.5.4"
-    react-dom "^15.5.4"
 
 window-size@0.1.0:
   version "0.1.0"
