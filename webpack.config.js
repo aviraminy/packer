@@ -17,6 +17,20 @@ module.exports = {
     library: 'packer'
   },
 
+  resolve: {
+    mainFields: ['jsnext:main', 'main']
+  },
+
+  module: {
+    rules: [{
+      test: /.jsx?$/,
+      loader: 'babel-loader',
+      options: {
+        presets: [['env', { modules: false }], 'react']
+      }
+    }]
+  },
+
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: 'commons',
