@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "trash dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run clean && webpack"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,19 @@
   "bugs": {
     "url": "https://github.com/aviraminy/packer/issues"
   },
-  "homepage": "https://github.com/aviraminy/packer#readme"
+  "homepage": "https://github.com/aviraminy/packer#readme",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.5.1",
+    "babel-preset-react": "^6.24.1",
+    "html-webpack-plugin": "^2.28.0",
+    "webpack": "^2.6.0",
+    "webpack-bundle-analyzer": "^2.8.2"
+  },
+  "dependencies": {
+    "trash-cli": "^1.4.0",
+    "widgetA": "aviraminy/widgetA",
+    "widgetB": "aviraminy/widgetB"
+  }
 }
