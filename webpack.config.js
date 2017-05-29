@@ -17,7 +17,7 @@ module.exports = {
     library: 'packer'
   },
    resolve:{
-     mainFields: ["module", "main"],
+     mainFields: ["jsnext:amdocs:widgets", "main"],
      extensions: ['.js', '.json', '.jsx']
    },
 
