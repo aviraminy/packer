@@ -16,6 +16,28 @@ module.exports = {
     libraryTarget: 'umd',
     library: 'packer'
   },
+   resolve:{
+     mainFields: ["module", "main"],
+     extensions: ['.js', '.json', '.jsx']
+   },
+
+  module: {
+    rules: [{
+      test: /.jsx?$/,
+      include: function(modulePath) {
+        if (modulePath.indexOf("widgetA") >= 0 || modulePath.indexOf("widgetB") >= 0) {
+          console.log("Buble:", modulePath);
+          return true;
+        }
+        return false;
+      },
+
+      loader: 'babel-loader',
+      options: {
+        presets: [['env', { modules: false }], 'react']
+      }
+    }]
+  },
 
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
