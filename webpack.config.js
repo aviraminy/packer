@@ -17,21 +17,21 @@ module.exports = {
     library: 'packer'
   },
    resolve:{
-     mainFields: ["jsnext:amdocs:widgets", "main"],
+     mainFields: ["jsnext:amdocs", "main"],
      extensions: ['.js', '.json', '.jsx']
    },
 
   module: {
     rules: [{
       test: /.jsx?$/,
-      include: function(modulePath) {
+      /*include: function(modulePath) {
         if (modulePath.indexOf("widgetA") >= 0 || modulePath.indexOf("widgetB") >= 0) {
-          console.log("Buble:", modulePath);
+          console.log("Babel:", modulePath);
           return true;
         }
         return false;
       },
-
+*/
       loader: 'babel-loader',
       options: {
         presets: [['env', { modules: false }], 'react']
@@ -50,7 +50,7 @@ module.exports = {
       minChunks: Infinity
     }),
 
-    new HtmlPlugin(),
+  //  new HtmlPlugin(),
 
     new BundleAnalyzerPlugin()
   ]
